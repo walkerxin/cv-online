@@ -1,0 +1,15 @@
+html {
+	box-sizing: border-box;
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	color: #333;
+	font: 14px/1.5 Arial;
+}
+
+/*h1默认的font-size是2em，表示父亲font-size的2倍*/
