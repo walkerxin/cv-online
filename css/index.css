@@ -9,7 +9,40 @@ html {
 body {
 	margin: 0;
 	color: #333;
-	font: 14px/1.5 Arial;
+	font: 14px/1.5 微软雅黑;
+	display: grid;
+	grid: auto 200px / 2fr 6fr 2fr;
 }
 
 /*h1默认的font-size是2em，表示父亲font-size的2倍*/
+/* 
+【tip】像背景图片一样能居中，正常撑满 object-fit: cover; 
+		类似于 background-size: cover; */
+header {
+	grid-area: 1/1/2/4;
+	background: #444;
+	text-align: center;
+	padding: 25px 0;
+}
+
+header>.avatar {
+	width: 64px;
+	height: 64px;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+header>h1 {
+	font-size: 14px;
+	color: #fff;
+	margin: 14px 0 10px;
+}
+
+header>p {
+	color: #ccc;
+	margin: 0;
+}
+
+main {
+	grid-area: 2/2/3/3;
+}
