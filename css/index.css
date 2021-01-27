@@ -11,7 +11,7 @@ body {
 	color: #333;
 	font: 14px/1.5 Arial;
 	display: grid;
-	grid: auto 200px / 1fr 1000px 1fr;
+	grid: auto auto / 1fr 1000px 1fr;
 }
 
 ul {
@@ -94,13 +94,14 @@ main section>h2::after {
 	content: '';
 	flex: 1;
 	height: 3px;
-	margin-left: 50px;
+	margin-left: 48px;
 	background-color: #66a9a3;
 	border-radius: 2px;
 }
 
 main section>.details {
-	grid-area:2/2/3/3;
+  grid-area:2/2/3/3;
+  margin-top: 6px;
 }
 
 .basic-info>.details {
@@ -112,16 +113,27 @@ main section>.details {
 	margin-left: 1.1em;
 }
 
+main section>.details>li {
+  margin: 0.2em 0;
+  text-align: justify;
+}
+
 main section>.details .iconfont {
 	margin-right: 0.6em;
-	position: relative;
+  position: relative;
   top: 1.5px;
 }
 
 section>.details>.panel {
 	display: grid;
-	grid: auto auto / 122px auto;
-	align-items: center;
+	grid: auto auto / 122px auto auto;
+  align-items: center;
+  padding: 0.4em 0;
+}
+
+section>.details>.panel:last-child {
+  padding-bottom: 0;
+}
 }
 
 section .panel>.timeline {
@@ -139,7 +151,14 @@ section .panel>.subtitle {
 }
 
 section .panel>.more-info {
-	grid-area: 2/2/3/4;
+  grid-area: 2/2/3/4;
+  margin: 0.5em 0 0;
+  text-align: justify;
+}
+
+
+.skills-map dt {
+	margin: 0.2em 0;
 }
 
 .skills-map dd {
@@ -149,7 +168,6 @@ section .panel>.more-info {
 }
 
 .skills-map dd>.bar {
-	height: 3px;
+	height: 4px;
 	background: #66a9a3;
-
 }
