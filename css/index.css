@@ -6,6 +6,11 @@ html {
 	box-sizing: inherit;
 }
 
+ul, dl {
+	margin: 0;
+	padding: 0;
+}
+
 body {
 	margin: 0;
 	color: #333;
@@ -14,20 +19,27 @@ body {
 	grid: auto auto / 1fr 1000px 1fr;
 }
 
-ul {
-	margin: 0;
-	padding: 0;
+@media(max-width: 980px) {
+  body {
+    grid-area: 2/1/3/2;
+    grid: auto auto / 1fr 900px 1fr;
+  }
 }
 
-/*h1默认的font-size是2em，表示父亲font-size的2倍*/
-/* 
-【tip】像背景图片一样能居中，正常撑满 object-fit: cover; 
-		类似于 background-size: cover; */
 header {
 	grid-area: 1/1/2/4;
 	background: #444;
 	text-align: center;
 	padding: 25px 0;
+}
+
+@media(max-width: 768px) {
+  body {
+    grid: auto auto / auto;
+  }
+  header {
+    grid-area: 1/1/2/2;
+  }
 }
 
 header>.avatar {
@@ -67,6 +79,24 @@ main section {
 	grid-template: auto auto / 50px auto;
 	padding: 10px;
 	margin: 20px 0;
+}
+
+@media(max-width: 768px) {
+  main {
+    grid-area: 2/1/3/2;
+    grid: auto auto / auto;
+  }
+  .aside {
+    grid-area: 1/1/2/2;
+  }
+  
+  .experience {
+    grid-area: 2/1/3/2;
+  }
+
+  main section {
+    padding: 10px 8%;
+  }
 }
 
 main section>.iconfont {
@@ -134,6 +164,11 @@ section>.details>.panel {
 section>.details>.panel:last-child {
   padding-bottom: 0;
 }
+
+@media(max-width: 768px) {
+  section>.details>.panel {
+    grid: auto auto auto / 122px auto;
+  }
 }
 
 section .panel>.timeline {
@@ -156,6 +191,20 @@ section .panel>.more-info {
   text-align: justify;
 }
 
+@media(max-width: 768px) {
+  section .panel>h3 {
+    grid-area: 1/2/2/3;
+    justify-self: end;
+  }
+
+  section .panel>.subtitle {
+    grid-area: 2/1/2/3;
+  }
+
+  section .panel>.more-info {
+    grid-area: 3/1/4/3;
+  }
+}
 
 .skills-map dt {
 	margin: 0.2em 0;
@@ -163,11 +212,18 @@ section .panel>.more-info {
 
 .skills-map dd {
 	width: 100%;
-	margin: 12px 0 18px;
+	margin: 10px 0 16px;
 	background: #eaeaea;
 }
 
 .skills-map dd>.bar {
 	height: 4px;
 	background: #66a9a3;
+}
+
+@media(max-width: 768px) {
+  .skills-map {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
 }
